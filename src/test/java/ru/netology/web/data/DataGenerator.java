@@ -38,22 +38,15 @@ public class DataGenerator {
                 .statusCode(200);
     }
     public static String getRandomLogin(){
-        String login = faker.name(). username();
-        return login;
+        return faker.name(). username();
     }
 
     public static String getRandomPassword(){
-        String password = faker.internet().password();
-        return password;
+        return faker.internet().password();
     }
-    public static class Registration{
-        private Registration(){
 
-        }
-    }
     public static RegistrationDto getUser(String status){
-        var user = new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
-        return user;
+        return new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
     }
     public static RegistrationDto getRegisteredUser(String status){
         var registeredUser = getUser(status);
